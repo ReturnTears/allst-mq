@@ -16,6 +16,28 @@ bin/kafka-console.consumer.sh --topic first --bootstrap-server shizhan01
 
 kafka工作流程以及文件存储机制
 
+Kafka事务
+为了实现分区跨会话的事务, 需要引入一个全局唯一的Transaction ID(客户端提供的), 并将Producer获得的PID和Transaction ID绑定.
+这样当producer重启后就可以通过正在进行的Transaction ID获得原来的PID
+
+消息发送流程:
+Kafka的producer发送消息采用的是异步发送的方式,在消息发送的过程中, 涉及到了两个线程--main线程和sender线程, 以及一个线程共享变量--RecordAccumulator,
+main线程将消息发送给RecordAccumulator, sender线程不断从RecordAccumulator中拉取下下哦i发送到Kafka Broker.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```
