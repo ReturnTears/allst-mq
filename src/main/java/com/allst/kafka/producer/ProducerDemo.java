@@ -25,6 +25,10 @@ public class ProducerDemo {
         // value.serializer
         kafkaProps.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
+
+        // 添加分区器
+        kafkaProps.put("partitioner.class", "com.allst.kafka.partition.MyPartitioner");
+
         // 如何把生成的Avro对象发送到Kafka
         /**
         kafkaProps.put("key.serializer", "io.confluent.kafka.serializers.KafkaAvroSerializer")

@@ -16,6 +16,9 @@ object ProducerDemo {
         perperties.setProperty("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
         perperties.setProperty("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
 
+        // 自定义分区器
+        perperties.setProperty("partitioner.class", "com.allst.kafka.local.MyPartitioner")
+
         // 创建生成对象
         val producer = new KafkaProducer[String, String](perperties)
         // 创建主题topic
