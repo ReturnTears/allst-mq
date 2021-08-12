@@ -1,4 +1,4 @@
-#Kafka
+# MQ 消息队列
 ## Kafka
 ```
 Kafka命令行操作
@@ -25,21 +25,6 @@ Kafka的producer发送消息采用的是异步发送的方式,在消息发送的
 main线程将消息发送给RecordAccumulator, sender线程不断从RecordAccumulator中拉取下下哦i发送到Kafka Broker.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 
 ## Code
@@ -50,4 +35,12 @@ Scala
 两种语言对Kafka进行编码学习
 
 运行在集群环境中
+
+现在将专注于实现Kafka API使用的allst-kafka修改为allst-mq, 专注于各类MQ消息队列的使用，分析
+```
+
+## RabbitMQ
+[RabbitMQ](allst-rocketmq/README.md)
+```text
+
 ```
